@@ -1,5 +1,5 @@
 // CHANGE YOUR PASSWORD INSIDE THE QUOTES BELOW:
-const SECRET_PASSWORD = "bestie";
+const SECRET_PASSWORD = "111207";
 
 const unlockBtn = document.getElementById("unlock-btn");
 const passwordInput = document.getElementById("password-input");
