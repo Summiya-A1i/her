@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Bestie 🌸</title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <!-- 1. BABY PINK PASSWORD SCREEN -->
+  <div id="lock-screen" class="screen active">
+    <div class="lock-card">
+      <div class="floral-top">🌸 🌷 🌺</div>
+      <h2>Secret Garden</h2>
+      <p class="hint">Enter our secret password to open ✨</p>
+      <input type="password" id="password-input" placeholder="Type password here...">
+      <button id="unlock-btn" class="floral-btn">🌸 Unlock 🌷</button>
+      <p id="error-msg" class="error-text"></p>
+      <div class="floral-bottom">🌼 💮 🌸</div>
+    </div>
+  </div>
+
+  <!-- 2. MAIN MOBILE VIEW (3 STACKED BOXES) -->
+  <div id="main-screen" class="screen">
+    <div class="mobile-container">
+      <header class="site-header">
+        <h1>For You, Bestie 🌸</h1>
+        <p>Tap any box below to open it</p>
+      </header>
+
+      <!-- BOX 1 COVER: MEMORIES -->
+      <div class="cover-box" onclick="openSection('memories-section')">
+        <span class="cover-tag">01 📸</span>
+        <h3>Our Sweet Memories</h3>
+        <p>Tap to open photos & little secret notes...</p>
+      </div>
+
+      <!-- BOX 2 COVER: SONGS -->
+      <div class="cover-box" onclick="openSection('songs-section')">
+        <span class="cover-tag">02 🎵</span>
+        <h3>Songs That Remind Me of You</h3>
+        <p>Tap to listen & read why I picked these...</p>
+      </div>
+
+      <!-- BOX 3 COVER: LETTERS FOR YOU -->
+      <div class="cover-box" onclick="openSection('notes-section')">
+        <span class="cover-tag">03 💌</span>
+        <h3>Words From My Heart</h3>
+        <p>Tap to read my letters to you...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: MEMORIES + SCATTERED CARDS -->
+  <div id="memories-section" class="sub-page">
+    <div class="mobile-container">
+      <button class="back-btn" onclick="goBack()">← Back to Boxes</button>
+      <h2>Our Memories 📸</h2>
+
+      <!-- Horizontal Scroll Photos -->
+      <p class="scroll-hint">Swipe sideways to see photos →</p>
+      <div class="horizontal-gallery">
+        <div class="photo-card">
+          <img src="images/pic1.jpg" alt="Memory 1">
+          <p>Write a short caption here 🌸</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/pic2.jpg" alt="Memory 2">
+          <p>Write a short caption here ✨</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/pic3.jpg" alt="Memory 3">
+          <p>Write a short caption here 💕</p>
+        </div>
+      </div>
+
+      <!-- Writing Space -->
+      <div class="writing-box">
+        <h4>A Little Note About Us</h4>
+        <p>Write whatever you want here! Talk about your favorite day together, how much you miss hanging out, or a funny memory.</p>
+      </div>
+
+      <!-- Scattered Cute Little Cards -->
+      <h4 class="scatter-title">Tap these little cards 💌</h4>
+      <div class="scattered-area">
+        <div class="mini-card card-1" onclick="showPopupNote('Write your first cute little secret message here! 🌸')">
+          💌 Tap me
+        </div>
+        <div class="mini-card card-2" onclick="showPopupNote('Write your second cute little message here! ✨')">
+          🌸 Open me
+        </div>
+        <div class="mini-card card-3" onclick="showPopupNote('Write your third cute little message here! 💕')">
+          🌷 Read me
+        </div>
+        <div class="mini-card card-4" onclick="showPopupNote('Write your fourth cute little message here! 🦋')">
+          ✨ For you
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: SONGS WITH PICS & WRITING -->
+  <div id="songs-section" class="sub-page">
+    <div class="mobile-container">
+      <button class="back-btn" onclick="goBack()">← Back to Boxes</button>
+      <h2>Our Playlist 🎵</h2>
+
+      <!-- Song 1 -->
+      <div class="song-card">
+        <img src="images/song1.jpg" alt="Song 1 Cover" class="song-img">
+        <div class="song-info">
+          <h4>Song Title 1</h4>
+          <audio controls src="music/song1.mp3"></audio>
+          <p>Write why this song reminds you of her or what you want to tell her with this track...</p>
+        </div>
+      </div>
+
+      <!-- Song 2 -->
+      <div class="song-card">
+        <img src="images/song2.jpg" alt="Song 2 Cover" class="song-img">
+        <div class="song-info">
+          <h4>Song Title 2</h4>
+          <audio controls src="music/song2.mp3"></audio>
+          <p>Write your message for the second song here...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: 3 WRITING BOXES -->
+  <div id="notes-section" class="sub-page">
+    <div class="mobile-container">
+      <button class="back-btn" onclick="goBack()">← Back to Boxes</button>
+      <h2>Just For You 💌</h2>
+
+      <div class="writing-box">
+        <h4>Box 1: I'm Really Sorry 🌸</h4>
+        <p>Write your first big message or apology here. You can write as much as you want—the box will grow automatically!</p>
+      </div>
+
+      <div class="writing-box">
+        <h4>Box 2: Why You Mean So Much to Me 💕</h4>
+        <p>Write your second message here...</p>
+      </div>
+
+      <div class="writing-box">
+        <h4>Box 3: My Promise to You ✨</h4>
+        <p>Write your third message here...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP MODAL FOR SCATTERED CARDS -->
+  <div id="note-modal" class="modal" onclick="closePopupNote()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="closePopupNote()">×</span>
+      <p id="modal-text"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
